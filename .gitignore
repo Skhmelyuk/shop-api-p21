@@ -1,0 +1,12 @@
+venv/
+.pulintrc
+__pycache__/
+
+.vscode
+.idea
+.env
+
+media/
+debug.log
+
+
