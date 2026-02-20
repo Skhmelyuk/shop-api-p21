@@ -1,0 +1,54 @@
+GET http://localhost:8801/api/product_info/ HTTP/1.1
+Accept: application/json
+
+###
+
+GET http://localhost:8801/api/products/ HTTP/1.1
+Accept: application/json
+
+###
+
+GET http://localhost:8801/api/products/9/ HTTP/1.1
+Accept: application/json
+
+###
+
+POST http://localhost:8801/api/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxNDE1ODc1LCJpYXQiOjE3NzE0MTU1NzUsImp0aSI6IjkzNDhlZWM3YmNjNjQ0YzZiMDdiMjYwMGRkYjJmZDYyIiwidXNlcl9pZCI6IjIifQ.lzm0MBwoVXfNXcdazSMaG6SiE1MEpxvfE2jnnCVdKmY
+
+{
+    "name": "Test Product 6",
+    "description": "Test Description 6",
+    "price": 300,
+    "stock": 30
+}
+
+###
+
+POST http://localhost:8801/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "skhmelyuk",
+    "password": "qwerty_1985"
+}
+
+
+###
+    
+POST http://localhost:8801/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123"
+}
+
+###
+POST http://localhost:8801/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MTUwMjA2NywiaWF0IjoxNzcxNDE1NjY3LCJqdGkiOiJmMjI4Y2JkNDA1MGI0OGVhYmE1NzZmMzVlZTA2NDEwZiIsInVzZXJfaWQiOiIyIn0.-hTKkdKV1oNphwmP5lG5cjGW7YPJVf60y_cH1ZgFHFQ"
+}
