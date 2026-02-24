@@ -1,32 +1,58 @@
-GET http://localhost:8801/api/product_info/ HTTP/1.1
+GET http://localhost:8000/api/product_info/ HTTP/1.1
 Accept: application/json
 
 ###
 
-GET http://localhost:8801/api/products/ HTTP/1.1
+GET http://localhost:8000/api/products?page=2 HTTP/1.1
 Accept: application/json
 
 ###
 
-GET http://localhost:8801/api/products/9/ HTTP/1.1
+
+GET http://localhost:8000/api/products?search=airpods&price__lt=1000&ordering=name HTTP/1.1
 Accept: application/json
 
 ###
 
-POST http://localhost:8801/api/products/ HTTP/1.1
+GET http://localhost:8000/api/products?ordering=-price HTTP/1.1
+Accept: application/json
+
+###
+
+GET http://localhost:8000/api/products?search=ноутбук HTTP/1.1
+Accept: application/json
+
+###
+
+GET http://localhost:8000/api/products/?price=35000 HTTP/1.1
+Accept: application/
+
+###
+
+GET http://localhost:8000/api/products/?stock=10 HTTP/1.1
+Accept: application/json
+
+###
+
+GET http://localhost:8000/api/products/9/ HTTP/1.1
+Accept: application/json
+
+###
+
+POST http://localhost:8000/api/products/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxNDE1ODc1LCJpYXQiOjE3NzE0MTU1NzUsImp0aSI6IjkzNDhlZWM3YmNjNjQ0YzZiMDdiMjYwMGRkYjJmZDYyIiwidXNlcl9pZCI6IjIifQ.lzm0MBwoVXfNXcdazSMaG6SiE1MEpxvfE2jnnCVdKmY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzcxNjg2MTkzLCJpYXQiOjE3NzE2ODU4OTMsImp0aSI6ImMzYjJlYTAxZjIwNjQ5NDlhODgyZWNjYTBhZThkN2EwIiwidXNlcl9pZCI6IjEifQ.YhHFvEXJP04C1NtmrRjF3D53GEFFlZ-v2guoiRx5W28
 
 {
-    "name": "Test Product 6",
-    "description": "Test Description 6",
+    "name": "AirPods Pro 5",
+    "description": "AirPods Pro для работы",
     "price": 300,
-    "stock": 30
+    "stock": 10
 }
 
 ###
 
-POST http://localhost:8801/api/token/ HTTP/1.1
+POST http://localhost:8000/api/token/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -37,7 +63,7 @@ Content-Type: application/json
 
 ###
     
-POST http://localhost:8801/api/token/ HTTP/1.1
+POST http://localhost:8000/api/token/ HTTP/1.1
 Content-Type: application/json
 
 {
@@ -46,7 +72,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8801/api/token/refresh/ HTTP/1.1
+POST http://localhost:8000/api/token/refresh/ HTTP/1.1
 Content-Type: application/json
 
 {
